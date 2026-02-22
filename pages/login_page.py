@@ -24,3 +24,8 @@ class LoginPage(BasePage):
 
     def is_password_masked(self):
         return self.page.get_by_placeholder("Password").get_attribute("type") == "password"
+    
+    def get_login_error_message(self):
+        error = self.page.locator(".oxd-alert-content-text")
+        error.wait_for(state="visible")
+        return error.inner_text()

@@ -51,7 +51,7 @@ def test_add_user_null_inputs(page:Page):
     # Wait for validation messages
     page.locator(".oxd-input-field-error-message").first.wait_for(state="visible")
 
-    assert admin.get_error_null_inputs() == 5
+    assert admin.get_error_null_inputs() == 6
     
 
 @pytest.mark.regression

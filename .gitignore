@@ -1,0 +1,19 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Test reports & logs
+reports/
+*.log
+playwright-report/
+screenshots/
+videos/
+
+# IDE / Editor
+.vscode/
+.idea/

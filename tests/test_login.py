@@ -123,9 +123,6 @@ def test_login_with_enter_key(page):
     dashboard = DashboardPage(page)
 
     login.navigate()
+    login.login_with_enter("Admin", "admin123")
 
-    page.locator(login.USERNAME_INPUT).fill("Admin")
-    page.locator(login.PASSWORD_INPUT).fill("admin123")
-    page.locator(login.PASSWORD_INPUT).press("Enter")
-
-    assert dashboard.is_dashboard_loaded(), "Login via Enter key failed"
+    assert dashboard.is_dashboard_loaded()

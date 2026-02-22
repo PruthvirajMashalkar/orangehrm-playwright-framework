@@ -65,7 +65,9 @@ class AdminPage(BasePage):
         self.page.locator(".oxd-toast-content").wait_for()
     
     def get_error_null_inputs(self):
-        return self.page.locator('//span[text()="Required"]').count()
+        errors = self.page.locator(".oxd-input-field-error-message")
+        errors.first.wait_for(state="visible")
+        return errors.count()
 
     def test_search_username(self, name):
         username_input = self.page.locator('//label[text()="Username"]/following::input[1]')
